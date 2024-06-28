@@ -6,7 +6,8 @@ export const HomeScreen = () => {
 
   return (
   <View style={geralStyles.layout}>
-    <Text style={geralStyles.title}>Main</Text>
+    <Text style={geralStyles.title}>Welcome to HomeScreen</Text>
   </View>
   );
+  
 };
