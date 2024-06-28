@@ -5,12 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 const SignInScreen = () => {
-  
   const nav = useNavigation();
 
   return (
-
-
   <View style={styles.layout}>
     <Text style={styles.title}>Sign In</Text>
       <Button
@@ -20,7 +17,10 @@ const SignInScreen = () => {
   </View>
 )};
 
-const SignUpScreen = () => (
+const SignUpScreen = () => {
+  const nav = useNavigation();
+
+  return (
   <View style={styles.layout}>
     <Text style={styles.title}>Sign Up</Text>
       <Button
@@ -28,14 +28,15 @@ const SignUpScreen = () => (
       onPress={() => nav.navigate('Main')}
       />
   </View>
-);
+)};
 
 // Add the new stack navigator above this line
 
 export const AppNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator headerMode='none'>
     <Stack.Screen name="SignIn" component={SignInScreen} />
     <Stack.Screen name="SignUp" component={SignUpScreen} />
+    <Stack.Screen name="Main" />
   </Stack.Navigator>
 );
 
